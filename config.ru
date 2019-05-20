@@ -14,7 +14,7 @@ class MYAPI < Grape::API
   end
   post :login do
     @password_flag = false
-    db = Mysql2::Client.new(host: '192.168.1.220', username: 'root',
+    db = Mysql2::Client.new(host: '127.0.0.1', username: 'root',
                             password: '123456', database: 'homework')
     user_name = params['name']
     password = params['password']
@@ -32,7 +32,7 @@ class MYAPI < Grape::API
     optional :name, type: String
   end
   post :data do
-    db = Mysql2::Client.new(host: '192.168.1.220', username: 'root',
+    db = Mysql2::Client.new(host: '127.0.0.1', username: 'root',
                             password: '123456', database: 'homework')
     user_name = params['name']
     sql_s = 'SELECT * FROM homework.item WHERE user = "' + user_name + '"'
@@ -52,7 +52,7 @@ class MYAPI < Grape::API
     optional :rate, type: Integer
   end
   post :insert do
-    db = Mysql2::Client.new(host: '192.168.1.220', username: 'root',
+    db = Mysql2::Client.new(host: '127.0.0.1', username: 'root',
                             password: '123456', database: 'homework')
     user_name = params['name']
     item_name = params['item']

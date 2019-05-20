@@ -58,6 +58,7 @@ PLATFORMS
 DEPENDENCIES
   grape
   mysql2
+  rack
   sinatra
 
 BUNDLED WITH
